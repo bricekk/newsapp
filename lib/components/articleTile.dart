@@ -50,7 +50,14 @@ class ArticleTile extends StatelessWidget {
             fit: BoxFit.cover,
           )
         ),
-      ):Container(color: Colors.grey,),
+      ):Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/noImg.png"),
+              fit: BoxFit.cover,
+            )
+        ),
+      ),
     );
   }
 
