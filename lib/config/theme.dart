@@ -21,6 +21,16 @@ class AppTheme {
           color: Colors.deepOrangeAccent,
         )
     ),
+    textTheme: const TextTheme(
+      headline3: TextStyle(
+        fontSize: 15,
+        color: Colors.white,
+        fontWeight: FontWeight.w800,
+      )
+    ),
+    cardTheme: CardTheme(
+      color: Colors.grey.shade800,
+    )
   );
 
   static ThemeData light = ThemeData(
@@ -41,6 +51,16 @@ class AppTheme {
         color: Colors.deepOrangeAccent,
       )
     ),
+    textTheme: TextTheme(
+      headline3: TextStyle(
+        fontSize: 15,
+        color: Colors.grey.shade900,
+        fontWeight: FontWeight.w900,
+      )
+    ),
+    cardTheme: CardTheme(
+      color: Colors.grey.shade100,
+    )
   );
 
 }
