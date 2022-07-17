@@ -9,15 +9,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: GestureDetector(
-          onTap:(){ThemeService().switchTheme();},
-          child: Icon(Icons.sunny,size: 50,color: Colors.white,
-          )
-      )
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: Row(
+          children: const [
+            Text("News"),
+            Text("App",
+            style: TextStyle(
+              color: Colors.deepOrangeAccent,
+            ),)
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+
+      ),
     );
   }
 }

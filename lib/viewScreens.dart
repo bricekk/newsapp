@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/views/bookMarkPage.dart';
 import 'package:newsapp/views/home.dart';
+import 'package:newsapp/views/searchPage.dart';
+import 'package:newsapp/views/settingPage.dart';
 
 class ViewScreens extends StatefulWidget {
   const ViewScreens({Key? key}) : super(key: key);
@@ -10,19 +13,28 @@ class ViewScreens extends StatefulWidget {
 
 class _ViewScreensState extends State<ViewScreens> {
 
-  int _currentIndex = 0;
+  List<Widget> widgetList = const [
+    HomePage(),
+    SearchPage(),
+    BookMarkPage(),
+    SettingPage(),
+  ];
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePage(),
+      body: Center(child: widgetList[currentIndex]),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (index){
-          setState(){
-            _currentIndex = index;
-          }
+        currentIndex: currentIndex,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+        onTap: (int index){
+          setState((){
+            currentIndex = index;
+          });
         },
-        items: [
+        items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               label: "",
               icon: Icon(Icons.home),
