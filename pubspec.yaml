@@ -35,7 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts:
-  flutter_swiper:
+  card_swiper: ^2.0.4
   flutter_dotenv:
   dio:
   get:

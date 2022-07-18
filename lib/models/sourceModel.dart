@@ -1,6 +1,6 @@
 class Source {
   String? id;
-  String? name;
+  String name;
 
   Source({required this.id, required this.name});
 

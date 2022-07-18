@@ -6,6 +6,7 @@ class AppTheme {
   static ThemeData dark = ThemeData(
     brightness: Brightness.dark,
     colorScheme: const ColorScheme.dark(),
+    primaryColor: Colors.grey.shade900,
     scaffoldBackgroundColor: Colors.grey.shade900,
     appBarTheme: AppBarTheme(
         backgroundColor: Colors.grey.shade900,
@@ -26,15 +27,21 @@ class AppTheme {
         fontSize: 15,
         color: Colors.white,
         fontWeight: FontWeight.w800,
-      )
+      ),
+      headline2: TextStyle(
+      fontSize: 16,
+      color: Colors.white,
+      fontWeight: FontWeight.w900,
+    )
     ),
     cardTheme: CardTheme(
       color: Colors.grey.shade800,
-    )
+    ),
   );
 
   static ThemeData light = ThemeData(
     brightness: Brightness.light,
+    primaryColor: Colors.grey.shade900,
     colorScheme: const ColorScheme.light(),
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
@@ -56,10 +63,15 @@ class AppTheme {
         fontSize: 15,
         color: Colors.grey.shade900,
         fontWeight: FontWeight.w900,
+      ),
+      headline2: const TextStyle(
+        fontSize: 16,
+        color: Colors.white,
+        fontWeight: FontWeight.w900,
       )
     ),
     cardTheme: CardTheme(
-      color: Colors.grey.shade100,
+      color: Colors.grey.shade50,
     )
   );
 

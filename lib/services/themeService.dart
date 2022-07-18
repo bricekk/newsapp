@@ -22,3 +22,19 @@ class ThemeService {
     print("ThemeMode: ${Get.isDarkMode ? "light" : "dark"}");
   }
 }
+
+
+// class LangService{
+//   final _box = GetStorage();
+//   final _key = 'isFR';
+//
+//   bool _loadLangFromBox() => _box.read(_key)??false;
+//
+//   _saveLangToBox(bool isFR) => _box.write((_key), isFR);
+//
+//   void switchLang() async {
+//     await _saveLangToBox(!_loadLangFromBox());
+//     print("App language: ${Get ? "EN" : "FR"}");
+//   }
+//
+// }

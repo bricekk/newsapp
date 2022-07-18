@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/components/cardTile.dart';
 
 class BookMarkPage extends StatelessWidget {
   const BookMarkPage({Key? key}) : super(key: key);
@@ -15,6 +16,12 @@ class BookMarkPage extends StatelessWidget {
             style: TextStyle(
               color: Colors.deepOrangeAccent,
             ),)
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
           ],
         ),
       ),
