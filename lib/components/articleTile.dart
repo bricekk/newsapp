@@ -39,7 +39,7 @@ class ArticleTile extends StatelessWidget {
             right: 6,
             bottom: 13,
             child: Text(source??"Unknown",
-            style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 10),),
+            style: Theme.of(context).textTheme.headline4?.copyWith(fontSize: 10),),
         )
     ]
     );

@@ -24,10 +24,10 @@ class _SettingPageState extends State<SettingPage> {
         margin: const EdgeInsets.only(top: 20,bottom: 10),
         child: Column(
           children: [
-            //🇬🇧
+            //🇫🇷
             Column(
               children: [
-                _settingTile(param: "Region and languages", context: context, suffix: Text("🇫🇷")),
+                _settingTile(param: "Region and languages", context: context, suffix: Text("🇬🇧",style: const TextStyle(fontSize: 17),)),
                 _settingTile( param: "Dark mode", context: context, suffix: GestureDetector( child: Switch( value: value, activeColor: Colors.deepOrangeAccent, onChanged: (bool val){ setState((){ value = !value;}); ThemeService().switchTheme();},),),),
               ],
             ),
@@ -57,7 +57,7 @@ _settingTile({required String param, Widget? suffix, required BuildContext conte
     padding: const EdgeInsets.only(left: 15,right: 18),
     decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: (Theme.of(context).textTheme.headline2?.color)!,width: 1),
+          top: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)!,width: 1),
         )
     ),
     child: Row(

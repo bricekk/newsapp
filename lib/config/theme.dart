@@ -10,6 +10,9 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.grey.shade900,
     appBarTheme: AppBarTheme(
         backgroundColor: Colors.grey.shade900,
+        iconTheme: IconThemeData(
+            color: Colors.white,
+        ),
         titleTextStyle: GoogleFonts.ubuntu(
           fontWeight: FontWeight.w900,
           color: Colors.white,
@@ -46,6 +49,9 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+            color: Colors.grey.shade900
+        ),
       titleTextStyle: GoogleFonts.ubuntu(
         fontWeight: FontWeight.w900,
         color: Colors.grey.shade900,

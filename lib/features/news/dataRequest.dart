@@ -4,11 +4,12 @@ import 'package:newsapp/models/articleModel.dart';
 
 class DataRequest {
 
-  final urlEndPoint = "https://newsapi.org/v2/top-headlines?country=fr&apiKey=${dotenv.env["keyNewsApi"]}";
+  Future<List<Article>> getArticles({required String url}) async {
 
-  Future<List<Article>> getArticle() async {
+    String endPointUrl = "${url}&apiKey=${dotenv.env["keyNewsApi"]}";
+
     try {
-      var response = await Dio().get(urlEndPoint);
+      var response = await Dio().get(endPointUrl);
       List<dynamic> body = response.data["articles"];
       List<Article> articles = body.map((dynamic item) => Article.fromJson(item)).toList();
       return articles;
@@ -17,4 +18,5 @@ class DataRequest {
       throw ("Can't get the articles");
     }
   }
+
 }

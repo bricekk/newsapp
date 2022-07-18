@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/components/cardTile.dart';
 
 class BookMarkPage extends StatelessWidget {
   const BookMarkPage({Key? key}) : super(key: key);
