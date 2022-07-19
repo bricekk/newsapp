@@ -39,6 +39,8 @@ dependencies:
   flutter_dotenv:
   dio:
   get:
+  http:
+  html:
   get_storage:
 
 dev_dependencies:

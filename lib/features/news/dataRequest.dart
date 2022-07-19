@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'package:html/parser.dart' as parser;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:newsapp/models/articleModel.dart';
 
@@ -16,6 +19,19 @@ class DataRequest {
     } catch (e) {
       print(e);
       throw ("Can't get the articles");
+    }
+  }
+
+  Future<String> scrapContent ({required String url}) async {
+    var target = Uri.parse(url);
+    var response = await http.get(target);
+    if (response.statusCode == 200) {
+      var document = parser.parse(response.body);
+      var contentString = document.getElementsByTagName('article')[0].outerHtml;
+      return contentString;
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+      return "erreur";
     }
   }
 
