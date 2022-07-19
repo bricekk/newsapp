@@ -19,22 +19,21 @@ class ThemeService {
   void switchTheme() async {
     Get.changeThemeMode(_loadThemeFromBox() ? ThemeMode.light : ThemeMode.dark);
     await _saveThemeToBox(!_loadThemeFromBox());
-    print("ThemeMode: ${Get.isDarkMode ? "light" : "dark"}");
   }
 }
 
 
-// class LangService{
-//   final _box = GetStorage();
-//   final _key = 'isFR';
-//
-//   bool _loadLangFromBox() => _box.read(_key)??false;
-//
-//   _saveLangToBox(bool isFR) => _box.write((_key), isFR);
-//
-//   void switchLang() async {
-//     await _saveLangToBox(!_loadLangFromBox());
-//     print("App language: ${Get ? "EN" : "FR"}");
-//   }
-//
-// }
+class LangService {
+
+  final _box = GetStorage();
+  final _key = 'isFR';
+
+  bool loadLangFromBox() => _box.read(_key)??false;
+
+  _saveLangToBox(bool isFR) => _box.write((_key), isFR);
+
+  void switchLang() async {
+    await _saveLangToBox(!loadLangFromBox());
+  }
+
+}

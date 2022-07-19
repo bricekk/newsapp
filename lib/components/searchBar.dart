@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
+
   const SearchBar({Key? key}) : super(key: key);
 
   @override
@@ -11,6 +12,9 @@ class SearchBar extends StatelessWidget {
       child:  TextField(
         cursorHeight: 21,
         cursorColor: Colors.grey,
+        onChanged: (text){
+
+        },
         decoration: InputDecoration(
           hintText: "Search news",
           suffixIcon: MaterialButton(

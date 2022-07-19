@@ -1,10 +1,13 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:newsapp/components/articleTile.dart';
 import 'package:newsapp/components/cardTile.dart';
 import 'package:newsapp/models/articleModel.dart';
 import 'package:newsapp/features/news/dataRequest.dart';
 import 'package:newsapp/views/others/articleView.dart';
+
+import '../services/themeService.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   late Future<List<Article>> futureArticlesList = DataRequest().getArticles(url: endPoint);
-
+  
   List categoriesUS = [
     "All",
     "Sport",
@@ -27,11 +30,14 @@ class _HomePageState extends State<HomePage> {
     "technology"
   ];
 
-  List categoriesEFR = [
+  List categoriesFR = [
     "Toutes",
     "Sport",
-    "Commerce",
+    "Divertissement",
+    "Science",
+    "Affaire",
     "Sante",
+    "technologie"
   ];
 
   int categoryIndex = 0;
@@ -90,10 +96,10 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                           border: Border(bottom: BorderSide(color: (categoryIndex==i)?Colors.deepOrangeAccent:Colors.transparent, width: 2))
                         ),
-                        child: Text(categoriesUS[i],
+                        child: Text(LangService().loadLangFromBox()?categoriesFR[i]:categoriesUS[i],
                         style: const TextStyle(
                           fontWeight: FontWeight.w900,
-                          fontSize: 15,
+                          fontSize: 16,
                         ),),
                       ),
                     )
@@ -110,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                   builder: (BuildContext context,
                       AsyncSnapshot<List<Article>> snapshot){
                     if(snapshot.hasData){
-                      List<Article> articles = snapshot.data!;
+                      List<Article> articles = snapshot.data!.sublist(0,5);
                       return Swiper(
                         layout: SwiperLayout.DEFAULT,
                         autoplayDelay: 5000,
@@ -141,16 +147,19 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Latest news",
-                    style: Theme.of(context).textTheme.headline3,
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      "last".tr,
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
                   ),
                   FutureBuilder(
                       future: futureArticlesList,
                       builder: (BuildContext context,
                           AsyncSnapshot<List<Article>> snapshot) {
                         if (snapshot.hasData) {
-                          List<Article> articles = snapshot.data!;
+                          List<Article> articles = snapshot.data!.sublist(5);
                           return SizedBox(
                               height: MediaQuery.of(context).size.height,
                               child: ListView.builder(

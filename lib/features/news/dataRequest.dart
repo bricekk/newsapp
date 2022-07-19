@@ -16,11 +16,12 @@ class DataRequest {
       List<Article> articles = body.map((dynamic item) => Article.fromJson(item)).toList();
       return articles;
     } catch (e) {
-      print(e);
+      print(endPointUrl);
       throw ("Can't get the articles");
     }
   }
 
+  ///Load the html body of the url target and return getElementsByTagName('article')[0].outerHtml;
   Future<String> scrapContent ({required String url}) async {
     var target = Uri.parse(url);
     var response = await http.get(target);

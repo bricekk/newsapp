@@ -12,24 +12,36 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
+
+  bool isFR = LangService().loadLangFromBox();
+
+  updateLanguage(Locale locale) {Get.back();Get.updateLocale(locale);}
+
   bool value = Get.isDarkMode;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text("Settings"),
+        title: Text("setting".tr),
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 20,bottom: 10),
         child: Column(
           children: [
-            //🇫🇷
             Column(
               children: [
-                _settingTile(param: "Region", context: context, suffix: const Text("🇬🇧",style: TextStyle(fontSize: 17),)),
-                _settingTile(param: "Language", context: context, suffix: const Text("🇬🇧",style: TextStyle(fontSize: 17),)),
-                _settingTile( param: "Dark mode", context: context, suffix: GestureDetector( child: Switch( value: value, activeColor: Colors.deepOrangeAccent, onChanged: (bool val){ setState((){ value = !value;}); ThemeService().switchTheme();},),),),
+                _settingTile(param: "lang".tr, context: context, suffix: GestureDetector(
+                    onTap:(){
+                      LangService().switchLang();
+                      updateLanguage(isFR?const Locale('en', 'US'):const Locale('fr', 'FR'));
+                      setState((){
+                        isFR = !isFR;
+                      });
+                      },
+                    child: Text(isFR?"🇫🇷":"🇬🇧",style: const TextStyle(fontSize: 17),))),
+                _settingTile( param: "themeMode".tr, context: context, suffix: GestureDetector( child: Switch( value: value, activeColor: Colors.deepOrangeAccent, onChanged: (bool val){ setState((){ value = !value;}); ThemeService().switchTheme();},),),),
               ],
             ),
             Expanded(

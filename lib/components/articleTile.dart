@@ -14,7 +14,7 @@ class ArticleTile extends StatelessWidget {
 
     return Stack(
       children:[ Container(
-        margin: const EdgeInsets.only(top: 10,bottom: 10),
+        margin: const EdgeInsets.only(bottom: 10),
         width: MediaQuery.of(context).size.width*0.9,
         height: 100,
         child: Row(

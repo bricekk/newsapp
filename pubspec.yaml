@@ -41,6 +41,7 @@ dependencies:
   get:
   http:
   html:
+  sqflite:
   get_storage:
 
 dev_dependencies:

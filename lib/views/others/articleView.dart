@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
-import 'package:newsapp/features/news/dataRequest.dart';
 
 class ArticleView extends StatelessWidget {
 
@@ -10,14 +9,12 @@ class ArticleView extends StatelessWidget {
   final String publishedAt;
   final String source;
 
-   ArticleView({Key? key,
+   const ArticleView({Key? key,
     required this.title,
     required this.imgUrl,
     required this.contentUrl,
     required this.publishedAt,
     required this.source}) : super(key: key);
-
-   late Future<String> content = DataRequest().scrapContent(url: contentUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -71,21 +68,6 @@ class ArticleView extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline2?.copyWith(color: Get.isDarkMode?Colors.white:Colors.black),),
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 20),
-                child: FutureBuilder(
-                  future: content,
-                    builder:(BuildContext context, AsyncSnapshot<String> snapshot){
-                      if(snapshot.hasData){
-                        return Text(snapshot.data!);
-                      }
-                      return const Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.deepOrangeAccent,
-                        ),
-                      );
-                    })
-              )
             ],
           ),
         ),

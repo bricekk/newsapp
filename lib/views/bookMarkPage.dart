@@ -10,10 +10,10 @@ class BookMarkPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         title: Row(
-          children:const [
-            Text("Book"),
-            Text("marks",
-            style: TextStyle(
+          children: [
+            Text("bookmark#black".tr),
+            Text("bookmark#orange".tr,
+            style: const TextStyle(
               color: Colors.deepOrangeAccent,
             ),)
           ],
@@ -29,10 +29,10 @@ class BookMarkPage extends StatelessWidget {
       child: Center(
         child: SingleChildScrollView(
           child: Column(
-            children: const [
-               Text("Your bookmarks collection is empty",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 25,color: Colors.grey),textAlign: TextAlign.center,),
-               SizedBox(height: 10,),
-              Icon(Icons.bookmarks_outlined,size: 40,color:Colors.grey,)
+            children: [
+               Text("nobook".tr,style: TextStyle(fontWeight: FontWeight.w700,fontSize: 25,color: Colors.grey),textAlign: TextAlign.center,),
+              const SizedBox(height: 10,),
+              const Icon(Icons.bookmarks_outlined,size: 40,color:Colors.grey,)
             ],
           ),
         ),
