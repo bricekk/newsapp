@@ -16,7 +16,7 @@ class ArticleTile extends StatelessWidget {
       children:[ Container(
         margin: const EdgeInsets.only(top: 10,bottom: 10),
         width: MediaQuery.of(context).size.width*0.9,
-        height: MediaQuery.of(context).size.height/7,
+        height: 100,
         child: Row(
           children: [
             _imageBox(imgUrl: imgUrl??"", context: context),
@@ -47,8 +47,8 @@ class ArticleTile extends StatelessWidget {
 
   _imageBox({required String imgUrl, required BuildContext context}){
     return Container(
-      margin: const EdgeInsets.all(10),
-      height: MediaQuery.of(context).size.height/8,
+      margin: const EdgeInsets.only(bottom: 10,top: 10,right: 10),
+      height: 100,
       width: MediaQuery.of(context).size.width/4,
       decoration: BoxDecoration(
           image: DecorationImage(

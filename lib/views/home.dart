@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height/4,
+              height: 200,
               margin: const EdgeInsets.only(bottom: 20,top: 10),
               child: Center(
                 child: FutureBuilder(
@@ -137,16 +137,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 20,right: 20),
+              margin: const EdgeInsets.only(left: 18,right: 18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      "Latest news",
-                      style: Theme.of(context).textTheme.headline3,
-                    ),
+                  Text(
+                    "Latest news",
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   FutureBuilder(
                       future: futureArticlesList,

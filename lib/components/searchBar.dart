@@ -16,13 +16,13 @@ class SearchBar extends StatelessWidget {
           suffixIcon: MaterialButton(
             minWidth: 20,
             onPressed: (){/*The keyboard should disappear*/},
-              child:  Icon(Icons.search,color: Theme.of(context).textTheme.headline2?.color)),
+              child:  Icon(Icons.search,color: Theme.of(context).textTheme.headline4?.color)),
           contentPadding: const EdgeInsets.only(bottom: 15,left: 10),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: (Theme.of(context).textTheme.headline2?.color)!,width: 2),
+            borderSide: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)!,width: 2),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: (Theme.of(context).textTheme.headline2?.color)! ,width: 2)
+            borderSide: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)! ,width: 2)
           )
         ),
       ),

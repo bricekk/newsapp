@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:newsapp/models/sourceModel.dart';
 
 class ArticleView extends StatelessWidget {
 
@@ -79,7 +78,7 @@ class ArticleView extends StatelessWidget {
 
   _imgBox({required String imgUrl, required BuildContext context}){
     return Container(
-      height: MediaQuery.of(context).size.height/4,
+      height: 200,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: imgUrl.length>9 ? (NetworkImage(imgUrl) as ImageProvider<Object>) : const AssetImage("assets/noImg.png"),

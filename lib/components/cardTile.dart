@@ -30,7 +30,7 @@ class CardTile extends StatelessWidget {
   _imageBox({required String imgUrl, required BuildContext context}){
     return Container(
       margin: const EdgeInsets.all(10),
-      height: MediaQuery.of(context).size.height/8,
+      height: 200,
       width: MediaQuery.of(context).size.width/4,
       decoration: BoxDecoration(
             image: DecorationImage(
