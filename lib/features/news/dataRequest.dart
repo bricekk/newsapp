@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
 import 'package:html/parser.dart' as parser;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:newsapp/models/articleModel.dart';

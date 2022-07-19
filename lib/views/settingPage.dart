@@ -27,7 +27,8 @@ class _SettingPageState extends State<SettingPage> {
             //🇫🇷
             Column(
               children: [
-                _settingTile(param: "Region and languages", context: context, suffix: Text("🇬🇧",style: const TextStyle(fontSize: 17),)),
+                _settingTile(param: "Region", context: context, suffix: const Text("🇬🇧",style: TextStyle(fontSize: 17),)),
+                _settingTile(param: "Language", context: context, suffix: const Text("🇬🇧",style: TextStyle(fontSize: 17),)),
                 _settingTile( param: "Dark mode", context: context, suffix: GestureDetector( child: Switch( value: value, activeColor: Colors.deepOrangeAccent, onChanged: (bool val){ setState((){ value = !value;}); ThemeService().switchTheme();},),),),
               ],
             ),
@@ -55,16 +56,21 @@ _settingTile({required String param, Widget? suffix, required BuildContext conte
   return Container(
     height: 50,
     padding: const EdgeInsets.only(left: 15,right: 18),
+    margin: const EdgeInsets.only(left: 18,right: 18),
     decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)!,width: 1),
+          bottom: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)!,width: 1),
+          left: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)!,width: 1),
+          right: BorderSide(color: (Theme.of(context).textTheme.headline4?.color)!,width: 1),
         )
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(param,
-        style: GoogleFonts.roboto()),
+        style: GoogleFonts.roboto(
+          fontWeight: FontWeight.w500
+        )),
         suffix??Container(),
       ],
     ),

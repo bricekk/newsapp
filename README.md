@@ -1,6 +1,6 @@
-# newsapp
+# NEWSAPP
 
-A new Flutter project.
+A mobile application for actuality around the world.
 
 ## Getting Started
 

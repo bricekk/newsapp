@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:newsapp/features/news/dataRequest.dart';
 
 class ArticleView extends StatelessWidget {
@@ -18,7 +17,7 @@ class ArticleView extends StatelessWidget {
     required this.publishedAt,
     required this.source}) : super(key: key);
 
-  late Future<String> content = DataRequest().scrapContent(url: contentUrl);
+   late Future<String> content = DataRequest().scrapContent(url: contentUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +53,7 @@ class ArticleView extends StatelessWidget {
                           child: InkWell(
                             splashColor: Theme.of(context).scaffoldBackgroundColor, // Splash color
                             onTap: () {},
-                            child: SizedBox(width: 56, height: 56, child: Icon(Icons.bookmark)),
+                            child: const SizedBox(width: 56, height: 56, child: Icon(Icons.bookmark_add)),
                           ),
                         ),
                       )
@@ -73,7 +72,7 @@ class ArticleView extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 child: FutureBuilder(
                   future: content,
                     builder:(BuildContext context, AsyncSnapshot<String> snapshot){
